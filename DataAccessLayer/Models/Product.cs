@@ -14,7 +14,9 @@ namespace DataAccessLayer.Models
         public int Id { get; set; }
 
         [MaxLength(20)]
-        public string? Name { get; set; }
+        [Required]
+        public string Name { get; set; }
+        [Required]
         public bool Activated { get; set; }
 
         [JsonIgnore]
