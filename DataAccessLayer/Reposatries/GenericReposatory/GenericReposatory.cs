@@ -14,7 +14,7 @@ namespace DataAccessLayer.Reposatories
         }
         public async Task<List<T>> GetAllAsync (params System.Linq.Expressions.Expression<Func<T, object>>[] includeProperties)
         {
-           IQueryable<T> query = context.Set<T>().Where(p => (p as ISoftDeletable) != null && !(p as ISoftDeletable).IsDeleted);
+            IQueryable<T> query = context.Set<T>();
             if (includeProperties != null)
             {
                 foreach (var item in includeProperties)
